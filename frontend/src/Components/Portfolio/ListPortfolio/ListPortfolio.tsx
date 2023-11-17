@@ -1,4 +1,3 @@
-import React from "react";
 import CardPortfolio from "../CardPortfolio/CardPortfolio";
 
 interface Props {
