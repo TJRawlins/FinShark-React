@@ -35,6 +35,16 @@ function App() {
     setPortfolioValues(updatedPortfolio);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onPortfolioDelete = (e: any) => {
+    e.preventDefault();
+    const removed = portfolioValues.filter((value) => {
+      // check if value is not part of our target value
+      return value !== e.target[0].value;
+    });
+    setPortfolioValues(removed);
+  };
+
   /* OnClick: 
      + SyntheticEvent:  Broader type for events incase you can't find the right type
      + TRICK: To get type, do a console.log(e), hover over e to get the type
@@ -59,7 +69,10 @@ function App() {
         search={search}
         handleSearchChange={handleSearchChange}
       />
-      <ListPortfolio portfolioValues={portfolioValues} />
+      <ListPortfolio
+        portfolioValues={portfolioValues}
+        onPortfolioDelete={onPortfolioDelete}
+      />
       {serverError && <h1>{serverError}</h1>}
       <CardList
         searchResults={searchResults}
