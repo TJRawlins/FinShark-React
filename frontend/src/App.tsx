@@ -5,6 +5,8 @@ import Search from "./Components/Search/Search";
 import { CompanySearch } from "./company";
 import { searchCompanies } from "./api";
 import ListPortfolio from "./Components/Portfolio/ListPortfolio/ListPortfolio";
+import Navbar from "./Components/Navbar/Navbar";
+import Hero from "./Components/Hero/Hero";
 
 /* APP COMPONENT:
   + At the top of the component tree
@@ -64,6 +66,8 @@ function App() {
   // search prop = user input
   return (
     <div className="App">
+      <Navbar />
+      <Hero />
       <Search
         onSearchSubmit={onSearchSubmit}
         search={search}

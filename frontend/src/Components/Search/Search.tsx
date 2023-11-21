@@ -19,10 +19,12 @@ const Search: React.FC<Props> = ({
           onSubmit={onSearchSubmit}
         >
           <input
-            className="form relative flex flex-col w-full p-10 space-y-4 bg-darkBlue rounded-lg md:flex-row md:space-y-0 md:space-x-3"
+            className="flex-1 p-3 border-2 rounded-lg placeholder-black focus:outline-none"
+            id="search-input"
+            placeholder="Search companies"
             value={search}
             onChange={handleSearchChange}
-          />
+          ></input>
         </form>
       </div>
     </section>
