@@ -31,6 +31,6 @@ export const getCompanyProfile = async (query: string) => {
     );
     return data;
   } catch (error: any) {
-    console.error("error message from API: ", error.message);
+    console.error("Error message from API: ", error.message);
   }
 };
