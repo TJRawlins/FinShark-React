@@ -27,9 +27,12 @@ export const searchCompanies = async (query: string) => {
 export const getCompanyProfile = async (query: string) => {
   try {
     const data = await axios.get<CompanyProfile[]>(
-      `https://financialmodelingprop.com/api/v3/profile/${query}?apikey=${process.env.REACT_APP_API_KEY}`
+      `https://financialmodelingprep.com/api/v3/profile/${query}?apikey=${
+        import.meta.env.VITE_API_BASE_URL
+      }`
     );
     return data;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     console.error("Error message from API: ", error.message);
   }
