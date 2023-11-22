@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 
 interface Props {
   portfolioValue: string;
-}
-
-interface Props {
-  portfolioValue: string;
   onPortfolioDelete: (e: SyntheticEvent) => void;
 }
 

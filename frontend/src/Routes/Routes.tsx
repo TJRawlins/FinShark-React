@@ -5,13 +5,20 @@ import SearchPage from "../Pages/SearchPage/SearchPage";
 import CompanyPage from "../Pages/CompanyPage/CompanyPage";
 
 export const router = createBrowserRouter([
-    {
-        path:"/",
-        element: <App />,
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "", element: <HomePage /> },
+      { path: "search", element: <SearchPage /> },
+      {
+        path: "company/:ticker",
+        element: <CompanyPage />,
         children: [
-            {path: "", element: <HomePage />},
-            {path: "search", element: <SearchPage />},
-            {path: "company/:ticker", element: <CompanyPage />}
-        ]
-    }
+          { path: "company-profile", element: <HomePage /> },
+          { path: "income-statement", element: <HomePage /> },
+        ],
+      },
+    ],
+  },
 ]);

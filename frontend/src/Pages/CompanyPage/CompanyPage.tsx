@@ -4,6 +4,8 @@ import { useParams } from "react-router";
 import { CompanyProfile } from "../../company";
 import { useEffect, useState } from "react";
 import { getCompanyProfile } from "../../api";
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard";
 
 const CompanyPage = () => {
   // localhost:5173
@@ -23,7 +25,10 @@ const CompanyPage = () => {
   return (
     <>
       {company ? (
-        <div>{company.companyName}</div>
+        <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-hidden">
+          <Sidebar />
+          <CompanyDashboard />
+        </div>
       ) : (
         <div>Company not found</div>
       )}
